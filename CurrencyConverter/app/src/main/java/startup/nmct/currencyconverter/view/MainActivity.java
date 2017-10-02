@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
         if (!textRecognizer.isOperational()) {
-            Log.w("MainActivity", "Dependencies aren't available yet"); // Stopt hier
+            Log.w("MainActivity", "Dependencies aren't available yet"); // Stopt hier? Download dependencies bij eerste run. Werkt pas vanaf 2de run, met internet?
         } else {
             cameraSource = new CameraSource.Builder(getApplicationContext(), textRecognizer)
                     .setFacing(CameraSource.CAMERA_FACING_BACK)
