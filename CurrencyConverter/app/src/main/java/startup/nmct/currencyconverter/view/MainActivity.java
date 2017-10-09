@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
+        // Vervangen door dataBinding
         cameraView = (SurfaceView) findViewById(R.id.surface_view);
         textView = (TextView) findViewById(R.id.text_view);
 
@@ -133,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void receiveDetections(Detector.Detections<TextBlock> detections) {
                     final SparseArray<TextBlock> items = detections.getDetectedItems();
+                    // Hier loggen wat hij detecteert
+                    // Log.d("Detecting", items.toString());
                     if (items.size() != 0) {
                         textView.post(new Runnable() {
                             @Override
