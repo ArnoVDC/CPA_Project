@@ -77,7 +77,7 @@ public class MainFragment extends Fragment {
             case RequestCameraPermissionID:
             {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                         Log.d("Permission", "granted");
                         return;
                     } else {
@@ -192,7 +192,7 @@ public class MainFragment extends Fragment {
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onMainFragmentInteraction(uri);
         }
     }
 
@@ -225,6 +225,6 @@ public class MainFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onMainFragmentInteraction(Uri uri);
     }
 }

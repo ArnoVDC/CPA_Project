@@ -15,7 +15,7 @@ import android.view.MenuItem;
 import startup.nmct.currencyconverter.R;
 import startup.nmct.currencyconverter.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements MainFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements MainFragment.OnFragmentInteractionListener, SelectCurrencyFragment.OnFragmentInteractionListener {
 
     ActivityMainBinding activityMainBinding;
 
@@ -77,6 +77,15 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
         fragmentTransaction.commit();
     }
 
+    private void showSelectCountryFragment() {
+        FragmentManager fragmentManager = getFragmentManager();
+        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        SelectCountryFragment selectCountryFragment = SelectCountryFragment.newInstance();
+        fragmentTransaction.replace(R.id.fragment_main, selectCountryFragment, "selectCountryFragment");
+        fragmentTransaction.addToBackStack("selectCountryFragment");
+        fragmentTransaction.commit();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -93,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            showSelectCurrencyFragment();
             return true;
         }
 
@@ -102,7 +112,12 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
     // Fragment callbacks
 
     @Override
-    public void onFragmentInteraction(Uri uri) {
+    public void onMainFragmentInteraction(Uri uri) {
+        // MainFragment Callback
+    }
 
+    @Override
+    public void onSelectCurrencyFragmentInteraction(Uri uri) {
+        // SelectCurrencyFragment Callback
     }
 }

@@ -13,12 +13,12 @@ import startup.nmct.currencyconverter.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link SelectCurrencyFragment.OnFragmentInteractionListener} interface
+ * {@link SelectCountryFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link SelectCurrencyFragment#newInstance} factory method to
+ * Use the {@link SelectCountryFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SelectCurrencyFragment extends Fragment {
+public class SelectCountryFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +30,7 @@ public class SelectCurrencyFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public SelectCurrencyFragment() {
+    public SelectCountryFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class SelectCurrencyFragment extends Fragment {
      * this fragment using the provided parameters.
      */
     // TODO: Rename and change types and number of parameters
-    public static SelectCurrencyFragment newInstance(/*String param1, String param2*/) {
-        SelectCurrencyFragment fragment = new SelectCurrencyFragment();
+    public static SelectCountryFragment newInstance(/*String param1, String param2*/) {
+        SelectCountryFragment fragment = new SelectCountryFragment();
         /*Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,13 +61,13 @@ public class SelectCurrencyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_select_currency, container, false);
+        return inflater.inflate(R.layout.fragment_select_country, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onSelectCurrencyFragmentInteraction(uri);
+            mListener.onSelectCountryFragmentInteraction(uri);
         }
     }
 
@@ -100,6 +100,6 @@ public class SelectCurrencyFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onSelectCurrencyFragmentInteraction(Uri uri);
+        void onSelectCountryFragmentInteraction(Uri uri);
     }
 }

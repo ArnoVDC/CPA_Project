@@ -5,9 +5,17 @@
     tools:context="startup.nmct.currencyconverter.view.SelectCurrencyFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
+
+    <Button
+        android:id="@+id/btn_from_currency"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:text="FROM CURRENCY" />
+
+    <Button
+        android:id="@+id/btn_target_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="263dp"
+        android:text="TARGET CURRENCY" />
 </FrameLayout>
